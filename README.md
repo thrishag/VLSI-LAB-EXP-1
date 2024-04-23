@@ -75,7 +75,109 @@ FULL ADDER:
 ~~~
 OUTPUT:
 
------Place a Waveform Generated from Xilinx ISE
+
+![image](https://github.com/thrishag/VLSI-LAB-EXP-1/assets/98105360/a3d55d7b-7e85-4547-a15a-695b827f09ee)
+
+
+HALF ADDER:
+~~~
+        module hs(a,b,difference,borrow);
+       input a,b;
+       output difference,borrow;
+       wire w;
+       xor g1(difference,a,b);
+       and g2(borrow,w,b);
+       not g3(w,a);
+       endmodule
+~~~
+OUTPUT:
+
+
+
+![image](https://github.com/thrishag/VLSI-LAB-EXP-1/assets/98105360/1aa23c74-d08b-468a-a9b7-89c5131bd9c2)
+
+HALF SUBTRACTOR:
+~~~
+module hs(a,b,difference,borrow);
+       input a,b;
+       output difference,borrow;
+       wire w;
+       xor g1(difference,a,b);
+       and g2(borrow,w,b);
+       not g3(w,a);
+       endmodule
+~~~
+
+OUTPUT:
+
+![image](https://github.com/thrishag/VLSI-LAB-EXP-1/assets/98105360/e4b540f1-8c08-4659-97fc-ccd1a304a8cb)
+
+FULL SUBTRACTOR:
+~~~
+module fs(a,b,c,diff,borrow);
+    input a,b,c;
+    output diff,borrow;
+    wire w1,w2,w3,w4,w5;
+    xor g1(w3,a,b);
+    xor g2(diff,c,w3);
+    and g3(w2,b,w1);
+    and g4(w5,w4,c);
+    not g5(w1,a);
+    not g6(w4,w3);
+    nor g7(borrow,w5,w2);
+    endmodule   
+~~~
+OUTPUT:
+![image](https://github.com/thrishag/VLSI-LAB-EXP-1/assets/98105360/8a59587e-a839-4b3c-95ac-ff40d1619829)
+
+8 RIPPLE CARRY ADDER
+
+~~~
+  module fa(a,b,cin,sum,carry);
+       input a,b,cin;
+       output sum,carry;
+       wire w1,w2,w3;
+       xor g1(w1,a,b);
+       and g2(w3,a,b);
+       xor g3(sum,w1,cin);
+       and g4(w2,w1,cin);
+       or g5(carry,w2,w3);
+ endmodule
+ 
+ module rca(a,b,cin,sum,cout);
+        input[3:0]a,b;
+        input cin;
+        output [3:0]sum;
+        output cout;
+        wire w1,w2,w3;
+      fa g1(.a(a[0]),
+            .b(b[0]),
+            .cin(cin),
+            .sum(sum[0]),
+            .carry(c1)
+            );
+       fa g2(.a(a[1]),
+             .b(b[1]),
+             .cin(c1),
+             .sum(sum[1]),
+             .carry(c2)
+             );
+       fa g3(.a(a[2]),
+             .b(b[2]),
+             .cin(c2),
+             .sum(sum[2]),
+             .carry(c3)
+             );
+        fa g4(.a(a[3]),
+              .b(b[2]),
+              .cin(c3),
+              .sum(sum[3]),
+              .carry(cout)
+              );
+       endmodule
+~~~
+OUTPUT:
+![image](https://github.com/thrishag/VLSI-LAB-EXP-1/assets/98105360/c5bfd9db-edc8-4037-8698-ffb09f654648)
 
 RESULT:
-
+       Hence, the stimulation and synthesis of a Logic Gates,Adders and Subtractor was run successfully by using Xilinx ISE.
