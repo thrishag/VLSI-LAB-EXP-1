@@ -40,9 +40,10 @@ Full Subtractor:
 
 
 VERILOG CODE:
-```
+
 LOGIC GATES:
-module gate(a,b,w1,w2,w3,w4,w5,w6,w7);
+~~~
+      module gate(a,b,w1,w2,w3,w4,w5,w6,w7);
       input a,b;
       output w1,w2,w3,w4,w5,w6,w7;
       and g1 (w1,a,b);
@@ -53,7 +54,7 @@ module gate(a,b,w1,w2,w3,w4,w5,w6,w7);
       nand g6 (w6,a,b);
       nor g7 (w7,a,b);
 endmodule
-```
+~~~
 OUTPUT:
 
 -----Place a Waveform Generated from Xilinx ISE
