@@ -131,6 +131,9 @@ FULL ADDER:
        or g5(carry,w2,w3);
        endmodule
 ~~~
+
+
+
 OUTPUT:
 
 
@@ -148,6 +151,8 @@ HALF ADDER:
        not g3(w,a);
        endmodule
 ~~~
+
+
 OUTPUT:
 
 
@@ -165,6 +170,8 @@ module hs(a,b,difference,borrow);
        not g3(w,a);
        endmodule
 ~~~
+
+
 
 OUTPUT:
 
@@ -186,6 +193,8 @@ module fs(a,b,c,diff,borrow);
     nor g7(borrow,w5,w2);
     endmodule   
 ~~~
+
+
 OUTPUT:
 
 
@@ -238,11 +247,15 @@ OUTPUT:
               );
        endmodule
 ~~~
+
+
 OUTPUT:
 
 
 
 ![image](https://github.com/thrishag/VLSI-LAB-EXP-1/assets/98105360/c5bfd9db-edc8-4037-8698-ffb09f654648)
+
+
 
 RESULT:
        Hence, the stimulation and synthesis of a Logic Gates,Adders and Subtractor was run successfully by using Xilinx ISE.
