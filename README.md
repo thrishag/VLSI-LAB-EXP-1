@@ -53,7 +53,25 @@ LOGIC GATES:
       xnor g5 (w5,a,b);
       nand g6 (w6,a,b);
       nor g7 (w7,a,b);
-endmodule
+      endmodule
+~~~
+OUTPUT:
+
+
+![image](https://github.com/thrishag/VLSI-LAB-EXP-1/assets/98105360/4a6fc716-61a1-407f-9b0f-05d3a22665d2)
+
+FULL ADDER:
+~~~
+       module fulladder(a,b,cin,sum,carry);
+       input a,b,cin;
+       output sum,carry;
+       wire w1,w2,w3;
+       xor g1(w1,a,b);
+       xor g2(sum,w1,cin);
+       and g3(w2,w1,cin);
+       and  g4(w3,a,b);
+       or g5(carry,w2,w3);
+       endmodule
 ~~~
 OUTPUT:
 
