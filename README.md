@@ -110,6 +110,7 @@ module hs(a,b,difference,borrow);
 
 OUTPUT:
 
+
 ![image](https://github.com/thrishag/VLSI-LAB-EXP-1/assets/98105360/e4b540f1-8c08-4659-97fc-ccd1a304a8cb)
 
 FULL SUBTRACTOR:
@@ -128,6 +129,9 @@ module fs(a,b,c,diff,borrow);
     endmodule   
 ~~~
 OUTPUT:
+
+
+
 ![image](https://github.com/thrishag/VLSI-LAB-EXP-1/assets/98105360/8a59587e-a839-4b3c-95ac-ff40d1619829)
 
 8 RIPPLE CARRY ADDER
@@ -177,6 +181,9 @@ OUTPUT:
        endmodule
 ~~~
 OUTPUT:
+
+
+
 ![image](https://github.com/thrishag/VLSI-LAB-EXP-1/assets/98105360/c5bfd9db-edc8-4037-8698-ffb09f654648)
 
 RESULT:
