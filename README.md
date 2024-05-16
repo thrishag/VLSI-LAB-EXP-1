@@ -134,6 +134,8 @@ FULL ADDER:
 
 
 
+
+
 OUTPUT:
 
 
