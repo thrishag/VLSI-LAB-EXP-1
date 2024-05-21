@@ -5,7 +5,7 @@ To simulate and synthesis Logic Gates,Adders and Subtractor using Xilinx ISE.
 
 APPARATUS REQUIRED:  
 
-Xilinx 14.7 Spartan6 FPGA
+vivado 2023.2
 
 PROCEDURE: 
 
@@ -225,48 +225,29 @@ OUTPUT:
 8 RIPPLE CARRY ADDER
 
 ~~~
-  module fa(a,b,cin,sum,carry);
-       input a,b,cin;
-       output sum,carry;
-       wire w1,w2,w3;
-       xor g1(w1,a,b);
-       and g2(w3,a,b);
-       xor g3(sum,w1,cin);
-       and g4(w2,w1,cin);
-       or g5(carry,w2,w3);
- endmodule
- 
- module rca(a,b,cin,sum,cout);
-        input[3:0]a,b;
-        input cin;
-        output [3:0]sum;
-        output cout;
-        wire w1,w2,w3;
-      fa g1(.a(a[0]),
-            .b(b[0]),
-            .cin(cin),
-            .sum(sum[0]),
-            .carry(c1)
-            );
-       fa g2(.a(a[1]),
-             .b(b[1]),
-             .cin(c1),
-             .sum(sum[1]),
-             .carry(c2)
-             );
-       fa g3(.a(a[2]),
-             .b(b[2]),
-             .cin(c2),
-             .sum(sum[2]),
-             .carry(c3)
-             );
-        fa g4(.a(a[3]),
-              .b(b[2]),
-              .cin(c3),
-              .sum(sum[3]),
-              .carry(cout)
-              );
-       endmodule
+module fa(a,b,c,sum,carry);
+input a,b,c;
+output sum,carry;
+assign sum = a^b^c;
+assign carry=(a&b)|(b&c)|(c&a);
+endmodule
+module rca(a,b,cin,sum,cout);
+input [7:0]a,b;
+input cin;
+output [7:0]sum;
+output cout;
+wire c1,c2,c3,c4,c5,c6,c7;
+fa fa1(a[0],b[0],cin,sum[0],c1);
+fa fa2(a[1],b[1],c1,sum[1],c2);
+fa fa3(a[2],b[2],c2,sum[2],c3);
+fa fa4(a[3],b[3],c3,sum[3],c4);
+fa fa5(a[4],b[4],c4,sum[4],c5);
+fa fa6(a[5],b[5],c5,sum[5],c6);
+fa fa7(a[6],b[6],c6,sum[6],c7);
+fa fa8(a[7],b[7],c7,sum[7],cout);
+endmodule
+
+           
 ~~~
 
 
